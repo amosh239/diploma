@@ -1,0 +1,11 @@
+feature,half_life,alpha
+searches,1,0.0
+searches,3,0.0042763523572469575
+cat_to_cart,1,0.0
+cat_to_cart,3,0.0021621208814253602
+cat_to_ord,1,0.0
+cat_to_ord,3,0.0
+to_cart,1,0.0
+to_cart,3,0.004503029482296209
+to_ord,1,0.0
+to_ord,3,0.07837369639983262

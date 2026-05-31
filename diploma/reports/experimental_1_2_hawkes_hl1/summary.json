@@ -1,0 +1,169 @@
+{
+  "data_path": "data/processed/orbitals/dayuses_cohort_10000_seed42_daily_grid.csv",
+  "target_col": "to_ord",
+  "analysis_window": {
+    "start": "2025-01-15",
+    "end": "2025-09-30"
+  },
+  "train_ratio": 0.8,
+  "split_date": "2025-08-09",
+  "feature_names": [
+    "searches",
+    "cat_to_cart",
+    "cat_to_ord",
+    "to_cart",
+    "to_ord"
+  ],
+  "half_lives": [
+    1.0
+  ],
+  "alpha_l2": 0.0001,
+  "learn_base_scale": true,
+  "scale_l2": 10.0,
+  "scale_init": 1.0,
+  "learned_base_scale": 0.8581925894861879,
+  "max_iter": 300,
+  "hawkes_fit_success": true,
+  "train_panel": {
+    "rows": 1987113,
+    "users": 9966,
+    "date_min": "2025-01-15",
+    "date_max": "2025-08-09",
+    "mean_target": 0.10264338263601516,
+    "share_nonzero_days": 0.06028846874838019
+  },
+  "test_panel": {
+    "rows": 513118,
+    "users": 9926,
+    "date_min": "2025-08-10",
+    "date_max": "2025-09-30",
+    "mean_target": 0.12951212001917686,
+    "share_nonzero_days": 0.07453256365982094
+  },
+  "train_metrics_personalized_poisson": {
+    "poisson_loglik": -628387.1396772378,
+    "mean_poisson_nll": 0.3162312056119797,
+    "mean_poisson_deviance": 0.4938671032902119,
+    "mae": 0.17606200150256215,
+    "rmse": 0.552688764176615,
+    "aggregate_bias": 1.104693615749941e-08,
+    "relative_aggregate_bias": 1.0762443592367831e-07,
+    "mean_target": 0.10264338263601516,
+    "mean_prediction": 0.10264339368295132
+  },
+  "test_metrics_personalized_poisson": {
+    "poisson_loglik": -210167.01250743365,
+    "mean_poisson_nll": 0.40958807234872613,
+    "mean_poisson_deviance": 0.6468342121414534,
+    "mae": 0.21870018965722307,
+    "rmse": 0.6314030597866475,
+    "aggregate_bias": -0.0016851317617458117,
+    "relative_aggregate_bias": -0.013011382730020126,
+    "mean_target": 0.12951212001917686,
+    "mean_prediction": 0.12782698825743105
+  },
+  "train_metrics_hawkes": {
+    "poisson_loglik": -624459.8263614103,
+    "mean_poisson_nll": 0.31425481407519873,
+    "mean_poisson_deviance": 0.4899143202166498,
+    "mae": 0.1758266698771762,
+    "rmse": 0.5519498549537825,
+    "aggregate_bias": 2.4111687701444673e-06,
+    "relative_aggregate_bias": 2.3490737622070968e-05,
+    "mean_target": 0.10264338263601516,
+    "mean_prediction": 0.1026457938047853
+  },
+  "test_metrics_hawkes": {
+    "poisson_loglik": -204037.34733391134,
+    "mean_poisson_nll": 0.39764215508696116,
+    "mean_poisson_deviance": 0.6229423776179235,
+    "mae": 0.2171035671627204,
+    "rmse": 0.6278581778277676,
+    "aggregate_bias": -0.002662078821883379,
+    "relative_aggregate_bias": -0.020554669489536617,
+    "mean_target": 0.12951212001917686,
+    "mean_prediction": 0.12685004119729348
+  },
+  "test_improvement_vs_personalized_poisson": {
+    "delta_poisson_loglik": 6129.665173522313,
+    "delta_mean_poisson_nll": -0.011945917261764971,
+    "delta_mean_poisson_deviance": -0.023891834523529942,
+    "delta_mae": -0.0015966224945026808,
+    "delta_rmse": -0.0035448819588798086
+  },
+  "user_level_ll": {
+    "users": 9926,
+    "share_new_better": 0.6265363691315736,
+    "mean_delta_ll": 0.6175362858676525,
+    "median_delta_ll": 0.1348495682798747,
+    "q10_delta_ll": -0.4675019284347206,
+    "q90_delta_ll": 1.599604698598375
+  },
+  "user_level_ll_by_test_purchases": [
+    {
+      "bucket": "0",
+      "users": 1686,
+      "share_users": 0.1698569413661092,
+      "share_new_better": 0.7651245551601423,
+      "mean_delta_ll": 0.16949147817304427,
+      "median_delta_ll": 0.14571348665547135
+    },
+    {
+      "bucket": "1",
+      "users": 1391,
+      "share_users": 0.14013701390288133,
+      "share_new_better": 0.5427749820273184,
+      "mean_delta_ll": 0.09413852308494754,
+      "median_delta_ll": 0.027459632321719774
+    },
+    {
+      "bucket": "2",
+      "users": 1138,
+      "share_users": 0.11464839814628248,
+      "share_new_better": 0.5448154657293497,
+      "mean_delta_ll": 0.1301185863308017,
+      "median_delta_ll": 0.047455163469827255
+    },
+    {
+      "bucket": "3-5",
+      "users": 2239,
+      "share_users": 0.22556921217005843,
+      "share_new_better": 0.5904421616793212,
+      "mean_delta_ll": 0.3501267176998464,
+      "median_delta_ll": 0.11348061218255268
+    },
+    {
+      "bucket": "6-10",
+      "users": 1663,
+      "share_users": 0.1675397944791457,
+      "share_new_better": 0.6235718580877931,
+      "mean_delta_ll": 0.6623343180915641,
+      "median_delta_ll": 0.22213900840030476
+    },
+    {
+      "bucket": "11+",
+      "users": 1809,
+      "share_users": 0.18224863993552287,
+      "share_new_better": 0.6605859590934218,
+      "mean_delta_ll": 2.033988508872706,
+      "median_delta_ll": 0.44212839527257586
+    }
+  ],
+  "alpha_matrix": {
+    "searches": [
+      0.002993794400020485
+    ],
+    "cat_to_cart": [
+      0.001466262822982636
+    ],
+    "cat_to_ord": [
+      0.0
+    ],
+    "to_cart": [
+      0.004392922554370308
+    ],
+    "to_ord": [
+      0.01948233172326992
+    ]
+  }
+}
