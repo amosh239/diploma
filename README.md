@@ -58,16 +58,16 @@ scipy 1.16.3, scikit-learn 1.8.0, matplotlib 3.10.8.
 файл `data/processed/orbitals/dayuses_cohort_10000_seed42_daily_grid.csv`.
 Одна строка — это `(user_id, event_date)`; колонки:
 
-| колонка | смысл |
-|---|---|
-| `user_id` | идентификатор пользователя (псевдоним) |
-| `event_date` | календарный день |
-| `search`, `cat` | число событий поиска / просмотра категории |
-| `searches` | число поисковых сессий |
-| `has_*_to_cart`, `has_*_to_ord` | флаги переходов воронки |
-| `search_to_cart`, `search_to_ord`, `cat_to_cart`, `cat_to_ord` | переходы по воронке |
-| `to_cart`, `to_ord` | добавления в корзину / заказы за день (целевые величины) |
-| `gmv` | оборот за день |
+| колонка                                                         | смысл                                                                                            |
+| ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `user_id`                                                            | идентификатор пользователя (псевдоним)                              |
+| `event_date`                                                         | календарный день                                                                       |
+| `search`, `cat`                                                    | число событий поиска / просмотра категории                        |
+| `searches`                                                           | число поисковых сессий                                                            |
+| `has_*_to_cart`, `has_*_to_ord`                                    | флаги переходов воронки                                                          |
+| `search_to_cart`, `search_to_ord`, `cat_to_cart`, `cat_to_ord` | переходы по воронке                                                                  |
+| `to_cart`, `to_ord`                                                | добавления в корзину / заказы за день (целевые величины) |
+| `gmv`                                                                | оборот за день                                                                            |
 
 Целевая переменная по умолчанию — `to_ord` (число заказов за день).
 Окно анализа: `2025-01-15 … 2025-09-30`, доля train — `0.8`.
@@ -92,19 +92,18 @@ python scripts/compute/run_experimental_1_hawkes.py
 
 Ключевые скрипты лестницы моделей:
 
-| модель | скрипт |
-|---|---|
-| Poisson (глобальный) | `scripts/compute/run_poisson_baseline.py` |
-| Rolling seasonal Poisson | `scripts/compute/run_rolling_seasonal_poisson_baseline.py` |
-| Personalized gamma-Poisson | `scripts/compute/run_personalized_rolling_seasonal_poisson_baseline.py` |
-| Scaled-baseline Hawkes | `scripts/compute/run_experimental_1_hawkes.py` |
-| Joint Hawkes | `scripts/compute/run_joint_hawkes_ch8.py` |
-| GBDT | `scripts/compute/run_experimental_2_gbdt.py` |
-| Сводка лестницы | `scripts/plots/run_ladder_summary.py` |
+| модель                   | скрипт                                                              |
+| ------------------------------ | ------------------------------------------------------------------------- |
+| Poisson (глобальный) | `scripts/compute/run_poisson_baseline.py`                               |
+| Rolling seasonal Poisson       | `scripts/compute/run_rolling_seasonal_poisson_baseline.py`              |
+| Personalized gamma-Poisson     | `scripts/compute/run_personalized_rolling_seasonal_poisson_baseline.py` |
+| Scaled-baseline Hawkes         | `scripts/compute/run_experimental_1_hawkes.py`                          |
+| Joint Hawkes                   | `scripts/compute/run_joint_hawkes_ch8.py`                               |
+| GBDT                           | `scripts/compute/run_experimental_2_gbdt.py`                            |
+| Сводка лестницы  | `scripts/plots/run_ladder_summary.py`                                   |
 
 Ожидаемые test NLL (target `to_ord`): Global ≈ 0.4608, Rolling seasonal ≈ 0.4576,
-Personalized GP ≈ 0.4096, Scaled-baseline Hawkes ≈ 0.3958, Joint Hawkes ≈ 0.3952,
-GBDT ≈ 0.3881. Подобранные параметры Хоукса: (α, β) ≈ (0.88, 0.88).
+Personalized GP ≈ 0.4096, Scaled-baseline Hawkes ≈ 0.3958, Joint Hawkes ≈ 0.3952, GBDT ≈ 0.3881.
 
 Прочие скрипты `scripts/compute/run_*.py` считают отдельные эксперименты
 (кросс-канальная матрица, profile likelihood, доверительные интервалы,
