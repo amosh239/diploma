@@ -1,5 +1,10 @@
 /aux/
-/data/
+/data/*
+!/data/processed
+/data/processed/*
+!/data/processed/orbitals
+/data/processed/orbitals/*
+!/data/processed/orbitals/dayuses_cohort_10000_seed42_daily_grid.csv.gz
 /results/
 .venv/
 /notebooks/logs/
