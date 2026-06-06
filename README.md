@@ -101,10 +101,15 @@ gunzip -k data/processed/orbitals/dayuses_cohort_10000_seed42_daily_grid.csv.gz
 python scripts/compute/run_experimental_1_hawkes.py
 ```
 
-Скрипт печатает сводку в stdout (json) и складывает артефакты в
-`diploma/reports/experimental_1_hawkes/`. Все параметры (`--target-col`,
-`--train-ratio`, `--analysis-start/end`, регуляризация и т.д.) имеют значения
-по умолчанию, воспроизводящие числа из работы.
+Скрипт печатает сводку в stdout (json) и сам создаёт папку
+`diploma/reports/experimental_1_hawkes/`, куда складывает артефакты. Все параметры
+(`--target-col`, `--train-ratio`, `--analysis-start/end`, регуляризация и т.д.)
+имеют значения по умолчанию, воспроизводящие числа из работы.
+
+Готовые отчёты всех экспериментов уже лежат в `diploma/reports/`. Повторный запуск
+скрипта пересоздаёт соответствующую папку байт-в-байт — после прогона `git status`
+остаётся чистым, то есть результаты в репозитории получены именно этим кодом на
+этих данных.
 
 Ключевые скрипты лестницы моделей:
 
